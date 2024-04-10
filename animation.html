@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ACM Intro Animation</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="text-container"></div>
+      <div class="text-wrapper">
+        <div class="text">
+          ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM 
+          VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai
+        </div>
+        <div class="text">
+          ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM 
+          VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai
+        </div>
+        <div class="text">
+          ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM 
+          VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai
+        </div>
+        <div class="text">
+          ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM 
+          VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai
+        </div>
+        <div class="text">
+          ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM 
+          VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai
+        </div>
+        <div class="text">
+          ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM 
+          VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai
+        </div>
+        <div class="text">
+          ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM 
+          VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai ACM VIT Chennai
+        </div>
+      </div>
+      <div class="header">
+          <img src="VIT logo - white (2).png" height="200" width="200"/>
+          <img src="ACM LOGO (2).png" height="200" width="200" style="top:0px; right:0px;position: absolute;"/>
+          <img src="swc - gold.png" height="200" width="200" style="top:100px; right:0px;position: absolute;"/>
+          <h1 class="centered-head">ACM</h1>
+          <p class="centered-quote">
+            We see a world where computing helps solve tomorrow’s problems – where we use our knowledge and skills to advance the profession and make a positive impact.
+          </p>
+      </div>
+    </div>
+    <script>
+      window.addEventListener("load", function () {
+        gsap.to(".text-wrapper > div", 1, {
+          x: "500",
+          ease: Expo.easeInOut,
+          delay: 1,
+          stagger: 0.1,
+        });
+
+        gsap.to(".text-wrapper", 3, {
+          y: -600,
+          scale: 4.5,
+          rotate: -90,
+          ease: Expo.easeInOut,
+          delay: 1.5,
+        });
+
+        gsap.to(".text", 1, {
+          opacity: 1,
+          ease: Expo.easeInOut,
+          delay: 3,
+        });
+
+        gsap.to(".text-wrapper > div", 4, {
+          x: "-3500",
+          ease: Expo.easeInOut,
+          delay: 2,
+          stagger: 0.05,
+        });
+        gsap.fromTo(".text-wrapper", 4,{
+          opacity: 50,
+        },
+        {
+          opacity: 0,
+          duration: 1,
+        });
+
+        gsap.to(".text-container", 2, {
+          bottom: "-100%",
+          ease: Expo.easeInOut,
+          delay: 3,
+        });
+
+        anime.timeline().add({
+          targets: ".header .letter",
+          opacity: [0, 1],
+          translateY: [200, 0],
+          translateZ: 0,
+          easing: "easeOutExpo",
+          duration: 2000,
+          delay: (el, i) => 3500 + 40 * i,
+        })
+      });
+    </script>
+  </body>
+</html>
